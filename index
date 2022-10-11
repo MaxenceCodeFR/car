@@ -1,12 +1,24 @@
 <?php
+require 'bicicle.php';
 
-$car = new VoitureSuper('rouge', 4, 'mazout');
-$car->nbtire = 4;
-$car->vitesse = 0;
-$car->energyLevel = 100;
+$bicycle = new Bicycle('blue', 1);
+echo $bicycle->forward();
+var_dump($bicycle);
 
 
-echo $car->roulezJeunesse();
-echo '<br> Vitesse : ' . $car->speed . ' km/h ' . '<br>';
-echo $car->freinezJeunesse();
-echo '<br> Vitesse : ' . $car->speed . ' kmh' . '<br>';
+
+$car = new VoitureSuper('green', 4, 'electric');
+echo $car->forward();
+var_dump($car);
+
+require_once "Truck.php";
+
+$truck = new Truck(100, 'red', 2, 'fuel');
+
+echo $truck->forward();
+
+echo $truck->brake();
+
+
+
+echo $truck->full();
