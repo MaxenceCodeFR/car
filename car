@@ -1,0 +1,85 @@
+<?php
+class VoitureSuper
+{
+    private int $nbtire;
+    private int $vitesse;
+    private string $colorVoiture;
+    private int $numberSieges;
+    private string $energy;
+    private int $energyLevel;
+
+    // CONSTRUCT
+    public function __construct(string $colorVoiture, int $numberSieges, string $energy)
+    {
+        $this->colorVoiture = $colorVoiture;
+        $this->numberSieges = $numberSieges;
+        $this->energy = $energy;
+    }
+
+    // MUTATEURS
+    public function getTire(): int
+    {
+        return $this->nbtire;
+    }
+    public function setTire(int $nbtire): void
+    {
+        $this->tire = $nbtire;
+    }
+
+    public function getVitesse(): int
+    {
+        return $this->vitesse;
+    }
+    public function setVitesse(int $vitesse): void
+    {
+        if ($vitesse < 0) {
+            $vitesse = 0;
+        }
+        $this->vitesse = $vitesse;
+    }
+
+    public function getColorVoiture(): string
+    {
+        return $this->colorVoiture;
+    }
+
+    public function getNumberSieges(): int
+    {
+        return $this->numberSieges;
+    }
+
+    public function getEnergy(): string
+    {
+        return $this->energy;
+    }
+
+    public function getEnergyLevel(): int
+    {
+        return $this->energyLevel;
+    }
+    public function setEnergyLevel(int $energy): void
+    {
+        if ($energy < 0) {
+            $energy = 0;
+        }
+        $this->energyLevel = $energy;
+    }
+
+    // METHODES
+
+    public function roulezJeunesse(): string
+    {
+        $this->speed = 40;
+        return 'lets go bébé';
+    }
+    public function freinezJeunesse(): string
+    {
+        $sentence = "";
+        while ($this->speed > 0) {
+            $this->speed -= 5;
+            $sentence .= "Freinage !";
+        }
+        $sentence .= "I'm Stopé!";
+        return $sentence;
+    }
+}
