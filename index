@@ -1,0 +1,12 @@
+<?php
+
+$car = new VoitureSuper('rouge', 4, 'mazout');
+$car->nbtire = 4;
+$car->vitesse = 0;
+$car->energyLevel = 100;
+
+
+echo $car->roulezJeunesse();
+echo '<br> Vitesse : ' . $car->speed . ' km/h ' . '<br>';
+echo $car->freinezJeunesse();
+echo '<br> Vitesse : ' . $car->speed . ' kmh' . '<br>';
