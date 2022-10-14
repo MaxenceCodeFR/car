@@ -6,14 +6,7 @@ class Truck extends Vehicle
         'fuel',
         'electric',
     ];
-    public function setEnergy(string $energy): Truck
-    {
-        if (in_array($energy, self::ALLOWED_ENERGY)) {
-            $this->energy = $energy;
-        }
-        return $this;
-    }
-
+    
 
     protected int $stockCapacity;
     protected int $load = 100;
@@ -25,6 +18,16 @@ class Truck extends Vehicle
         $this->setEnergy($energy);
         $this->stockCapacity;
     }
+
+
+    public function setEnergy(string $energy): Truck
+    {
+        if (in_array($energy, self::ALLOWED_ENERGY)) {
+            $this->energy = $energy;
+        }
+        return $this;
+    }
+
 
     public function getStockCapacity(): int
     {
